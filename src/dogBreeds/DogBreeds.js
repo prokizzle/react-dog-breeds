@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import Breed from "./Breed";
 
 const DogBreeds = () => {
   const [breeds, setBreeds] = useState([]);
@@ -14,13 +15,11 @@ const DogBreeds = () => {
     fetchBreeds();
   }, []);
 
-  console.log({ breeds });
-
   return (
     <Container>
       <List>
         {Object.keys(breeds).map((breed) => (
-          <Breed>{breed}</Breed>
+          <Breed name={breed}></Breed>
         ))}
       </List>
     </Container>
@@ -30,15 +29,14 @@ const DogBreeds = () => {
 export default DogBreeds;
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const List = styled.div`
   display: grid;
-`;
-
-const Breed = styled.div`
-  display: flex;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
 `;
