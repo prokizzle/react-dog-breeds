@@ -55,7 +55,8 @@ const Container = styled.div`
 `;
 
 const StickyHeader = styled.div`
-  position: sticky;
+  position: fixed;
+  z-index: 1000;
   height: 50px;
   top: 0;
   width: 100%;
@@ -73,6 +74,7 @@ const List = styled.div`
   grid-auto-rows: minmax(100px, auto);
   grid-auto-flow: row;
   gap: 10px;
+  margin-top: 80px;
 
   @media (min-width: 600px) {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
