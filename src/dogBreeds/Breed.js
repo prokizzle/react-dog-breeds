@@ -49,6 +49,7 @@ const Card = styled.div`
   align-items: center;
   border: 1px solter
   border-radius: 5px;
+  position: relative;
 `;
 
 const CardTitle = styled.div`
@@ -56,9 +57,9 @@ const CardTitle = styled.div`
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: white;
-  position: relative;
-  top: 35px;
-  left: 10px;
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
 `;
 
 const CardThumbnail = styled.div`
