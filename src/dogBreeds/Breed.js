@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Breed = ({ name }) => {
   const [img, setImg] = useState("");
@@ -8,8 +9,8 @@ const Breed = ({ name }) => {
     const fetchImg = async () => {
       const {
         data: { message },
-      } = await axios.get(`https://dog.ceo/api/breed/${name}/images/random`);
-      setImg(message);
+      } = await axios.get(`https://dog.ceo/api/breed/${name}/images`);
+      setImg(message[0]);
     };
     fetchImg();
   }, [name]);
@@ -26,9 +27,17 @@ const Breed = ({ name }) => {
 
 export default Breed;
 
+Breed.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+Breed.defaultProps = {
+  name: "",
+};
+
 const Image = styled.img`
   height: 100px;
-  width: 100px;
+  object-fit: cover;
 `;
 
 const Card = styled.div`
@@ -39,6 +48,7 @@ const Card = styled.div`
   max-width: 200px;
   padding: 1rem;
   border: 1px solid black;
+  border-radius: 5px;
 `;
 
 const CardTitle = styled.div`
