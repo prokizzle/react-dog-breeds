@@ -36,26 +36,29 @@ Breed.defaultProps = {
 };
 
 const Image = styled.img`
-  height: 100px;
+  max-width: 300px;
+  /* max-height: 250px; */
+  min-witdh: 120px;
   object-fit: cover;
+  border-radius: 10px;
 `;
 
 const Card = styled.div`
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 200px;
-  padding: 1rem;
-  border: 1px solid black;
+  border: 1px solter
   border-radius: 5px;
 `;
 
 const CardTitle = styled.div`
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
-  flex: 1;
   margin-bottom: 0.5rem;
+  color: white;
+  position: relative;
+  top: 35px;
+  left: 10px;
 `;
 
 const CardThumbnail = styled.div`

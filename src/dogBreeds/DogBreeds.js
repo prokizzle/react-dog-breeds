@@ -68,23 +68,22 @@ const StickyHeader = styled.div`
 
 const List = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  grid-template-rows: repeat(6, 200px);
-  grid-auto-flow: dense;
+  justify-items: center;
+  grid-template-columns: repeat(1, minmax(100px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  grid-auto-flow: row;
   gap: 10px;
 
   @media (min-width: 600px) {
-    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
   }
 
   @media (min-width: 900px) {
-    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
   }
 `;
 
-const ListItem = styled.div`
-  width 200;
-  `;
+const ListItem = styled.div``;
 
 const Input = styled.input`
   padding: 0.5rem 1rem;
